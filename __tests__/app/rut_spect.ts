@@ -5,7 +5,7 @@ import { validarRUT } from "../../src/app/rut";
 test("Pruebas de esPalindromo()", () => {
     
     // Prueba con un formato completo
-    expect(validarRUT("merienda")).toBe(false);
+    expect(validarRUT("141551124")).toBe(true);
     /*
     expect(esPalindromo("anilina")).toBe(true);
     expect(esPalindromo("radar")).toBe(true);
