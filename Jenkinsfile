@@ -15,7 +15,15 @@ pipeline {
                     }
                 }
 
-                stage('Build -  buil del proyecto') {
+
+                stage('Build -  Ejecucion de pruebas') {
+                    steps {
+                        //solo test por que esta abreviado dentro de package.json
+                        sh 'npm run test'
+                    }
+                }
+
+                stage('Build -  build del proyecto') {
                     steps {
                         //echo "Saludos desde mi segunda etapa"
                         sh 'npm run build'
