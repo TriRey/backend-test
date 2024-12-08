@@ -1,14 +1,14 @@
 pipeline{
     agent any
     stages{
-        stage{
+        stage("primera etapa"){
             steps{
                 echo "Saludos desde mi primer pipeline"
             }
         }
-        stage{
+        stage("primera etapa"){
             steps{
-                echo "segundo pipeline"
+                echo "Saludos desde mi segunda etapa"
             }
         }
     }
