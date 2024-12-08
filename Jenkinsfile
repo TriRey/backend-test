@@ -1,6 +1,6 @@
 pipeline {
     agent any
-    stages{
+    stages {
         stage("primera etapa"){
             steps{
                 echo "Saludos desde mi primer pipeline"
