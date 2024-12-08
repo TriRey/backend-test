@@ -3,7 +3,6 @@ pipeline {
     environment {
         USERNAME = 'Trirey'
     }
-
     stages {
         stage('Build - Instalacion de Dependencias') {
             agent {
@@ -31,12 +30,6 @@ pipeline {
                         //echo "Saludos desde mi segunda etapa"
                         sh 'npm run build'
                     }
-                }
-
-                stage('delivery - subida a nexus') {
-                        steps {
-                            echo 'HOla'
-                        }
                 }
             }
         }
