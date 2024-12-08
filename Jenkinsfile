@@ -37,6 +37,7 @@ pipeline {
                         steps {
                             sh 'docker build -t backend-test'
                             sh 'docker tag backend:latest localhost:8082/backend-test:latest'
+                            sh 'docker push localhost:8082/backend-test:latest'
                         }
                 }
             }
