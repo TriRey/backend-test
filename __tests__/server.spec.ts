@@ -14,4 +14,13 @@ describe("Bateria de test de servidor", () => {
             });
     });
 
+    test("Debe responder con 200 en la ruta base", async () => {
+        const response = await request(app).get("/");
+        expect(response.statusCode).toBe(200);
+      });
+    
+      test("Debe manejar rutas no encontradas", async () => {
+        const response = await request(app).get("/ruta-no-existe");
+        expect(response.statusCode).toBe(404);
+      });
 });
