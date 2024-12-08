@@ -17,4 +17,9 @@ test("Pruebas de validarRUT()", () => {
     let a: any = null;
     expect(validarRUT(a)).toBe(false);
 
+    expect(validarRUT("14.155.112-4")).toBe(true);
+
+
+    expect(validarRUT(undefined as unknown as string)).toBe(false); // Valor undefined
+
 });
