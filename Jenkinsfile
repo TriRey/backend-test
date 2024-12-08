@@ -37,10 +37,6 @@ pipeline {
         //  NUEVO STAGE
         stage('delivery - subida a nexus') {
             steps {
-                echo 'echo bueno'
-                /*sh 'docker build -t backend-test .'
-                sh 'docker tag backend-test:latest localhost:8082/backend-test:latest'
-                sh 'docker push localhost:8082/backend-test:latest'*/
                 script {
                     docker.withRegistry('http://localhost:8082','IDRegistro') {
                                 sh 'docker build -t backend-test .'
