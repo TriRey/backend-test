@@ -6,7 +6,7 @@ pipeline {
                 echo "Saludos desde mi primer pipeline"
             }
         }
-        stage("primera etapa"){
+        stage("segunda etapa"){
             steps{
                 echo "Saludos desde mi segunda etapa"
             }
