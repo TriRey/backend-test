@@ -4,6 +4,11 @@
  * @returns true si el RUT es válido, false en caso contrario.
  */
 export function validarRUT(rut: string): boolean {
+    if (rut == null) {
+        //throw new Error("El valor no puede ser undefined");
+        return false;
+    }
+
     // Eliminar puntos y guiones del RUT
     const rutLimpio = rut.replace(/\./g, '').replace(/-/g, '');
 

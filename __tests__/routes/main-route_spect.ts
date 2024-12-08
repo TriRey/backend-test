@@ -17,16 +17,57 @@ describe("Bateria de test de servidor", () => {
             })
     })
 
-    /*
-    test("Servidor en primo", async () => {
+   
+    //-->   VALIDA CADENA
+    test("Servidor Valida Rut", async () => {
         return await request(app)
-            .get('/primo?numero=4')
+            .get('/buscar-subcadena?cadena=14&subcadena=dd')
             .expect(200)
             .expect("Content-Type", /text/)
             .then(response => {
-                expect(response.text).toBe("Hola, el numero ingresado no es un numero primo");
+                expect(response.text).toBe("La cadena \"14\" tiene 0 repeticiones de la subcadena \"dd\"");
             })
     })
-*/
-   
+
+    
+    //-->   VALIDA RUT
+    test("Servidor Valida Rut", async () => {
+        return await request(app)
+            .get('/validar-rut?rut=141551124')
+            .expect(200)
+            .expect("Content-Type", /text/)
+            .then(response => {
+                expect(response.text).toBe("El rut suministrado (141551124) es : valido");
+            })
+    })
+
+    test("Servidor Valida Rut", async () => {
+        return await request(app)
+            .get('/validar-rut?rut=')
+            .expect(200)
+            .expect("Content-Type", /text/)
+            .then(response => {
+                expect(response.text).toBe("El rut suministrado () es : invalido");
+            })
+    })
+
+    test("Servidor Valida Rut", async () => {
+        return await request(app)
+            .get('/validar-rut?rut=141551122')
+            .expect(200)
+            .expect("Content-Type", /text/)
+            .then(response => {
+                expect(response.text).toBe("El rut suministrado (141551122) es : invalido");
+            })
+    })
+
+    test("Servidor Valida Rut", async () => {
+        return await request(app)
+            .get('/validar-rut?')
+            .expect(200)
+            .expect("Content-Type", /text/)
+            .then(response => {
+                expect(response.text).toBe("El rut suministrado (undefined) es : invalido");
+            })
+    })
 });
