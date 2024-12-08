@@ -38,7 +38,7 @@ pipeline {
         stage('Quality Assurance') {
             agent {
                 docker {
-                    //label 'contenedores'
+                    label 'contenedores'
                     image 'sonarsource/sonar-scanner-cli'
                     args '--network=devops-infra_default'
                     reuseNode true
