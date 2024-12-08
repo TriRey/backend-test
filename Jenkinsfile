@@ -1,5 +1,9 @@
 pipeline {
     agent any
+    environment {
+        USERNAME = 'Trirey'
+    }
+
     stages {
         stage('Build - Instalacion de Dependencias') {
             agent {
@@ -14,7 +18,6 @@ pipeline {
                         sh 'npm install'
                     }
                 }
-
 
                 stage('Build -  Ejecucion de pruebas') {
                     steps {
