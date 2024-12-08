@@ -36,7 +36,6 @@ pipeline {
 
         //  SONARQUBE
         stage('Quality Assurance') {
-            echo 'Quality Assurance'
             agent {
                 docker {
                     //label 'contenedores'
